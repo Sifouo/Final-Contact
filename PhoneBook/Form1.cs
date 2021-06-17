@@ -130,7 +130,7 @@ namespace PhoneBook
                     var query = from o in App.PhoneBook
                                 where o.PhoneNo == txtSearch.Text 
                                 ||    o.FullName.ToLowerInvariant().Contains(txtSearch.Text.ToLowerInvariant())
-                                //||    o.Email.ToLowerInvariant() == txtSearch.Text.ToLowerInvariant()
+                                ||    o.Email.ToLowerInvariant() == txtSearch.Text.ToLowerInvariant()
                                 select o;
                     dataGridView1.DataSource = query.ToList();
                 }
