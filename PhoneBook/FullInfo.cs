@@ -41,6 +41,7 @@ namespace PhoneBook
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            pictureBox1.Image = null;
             this.Close();
         }
     }

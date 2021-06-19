@@ -72,14 +72,14 @@ namespace PhoneBook
                     pictureBox1.Image.Save($"{Application.StartupPath}\\Images\\{txtPhone.Text}.jpg");
                 }
 
-                MessageBox.Show("Number Store Successfully:");
+                MessageBox.Show("Number Store Successfully");
                 pictureBox1.Image = null;
-        }
-            catch (Exception ex)
+            }
+            catch
             {
                 MessageBox.Show("picture not imported,but change were Applied", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
 
         //Use Singleton Pattern to Create an Instance.
         static PhoneData db;
@@ -115,7 +115,7 @@ namespace PhoneBook
         //Code for "DataGridView". 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         //code for "Search box";
@@ -128,9 +128,9 @@ namespace PhoneBook
 
                     //we can use linq to Query data:
                     var query = from o in App.PhoneBook
-                                where o.PhoneNo == txtSearch.Text 
-                                ||    o.FullName.ToLowerInvariant().Contains(txtSearch.Text.ToLowerInvariant())
-                                ||    o.Email.ToLowerInvariant() == txtSearch.Text.ToLowerInvariant()
+                                where o.PhoneNo == txtSearch.Text
+                                || o.FullName.ToLowerInvariant().Contains(txtSearch.Text.ToLowerInvariant())
+                                || o.Email.ToLowerInvariant() == txtSearch.Text.ToLowerInvariant()
                                 select o;
                     dataGridView1.DataSource = query.ToList();
                 }
@@ -162,7 +162,7 @@ namespace PhoneBook
         {
             Application.Exit();
         }
-        
+
         //Code For Refresh button
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
@@ -188,7 +188,7 @@ namespace PhoneBook
             {
                 File.Delete("data.dat");
                 DirectoryInfo del = new DirectoryInfo("Images");
-                foreach(FileInfo file in del.GetFiles())
+                foreach (FileInfo file in del.GetFiles())
                 {
                     file.Delete();
                 }
