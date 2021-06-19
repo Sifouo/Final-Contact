@@ -1,4 +1,4 @@
-﻿/*Project - Phone Book in C# - InfoBrother*/
+﻿/*Project - Phone Book in C# - Sayed Mahdi Rezaei-Mir Mojtaba Hosseini Aghdam*/
 
 using System;
 using System.Data;
@@ -74,12 +74,12 @@ namespace PhoneBook
 
                 MessageBox.Show("Number Store Successfully:");
                 pictureBox1.Image = null;
-            }
+        }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("picture not imported,but change were Applied", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
 
         //Use Singleton Pattern to Create an Instance.
         static PhoneData db;
@@ -140,7 +140,7 @@ namespace PhoneBook
                 }
             }
         }
-
+        //Code For Remove Button
         private void Button1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are You sure that you want to Delete this Record?", "Message",
@@ -157,17 +157,19 @@ namespace PhoneBook
                 pictureBox1.Image = null;
             }
         }
-
+        //Code For Exit button
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        
+        //Code For Refresh button
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
 
+        //Code For Import button
         private void BtnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -178,6 +180,7 @@ namespace PhoneBook
             }
         }
 
+        //Code For Reset Button
         private void BtnReset_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are You sure that you want to Delete this Record?", "Message",
@@ -194,6 +197,7 @@ namespace PhoneBook
             }
         }
 
+        //Code For DataGrid View Double Click
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Contact contact = new Contact(dataGridView1.CurrentRow.Cells[0].Value.ToString(), dataGridView1.CurrentRow.Cells[1].Value.ToString(), dataGridView1.CurrentRow.Cells[2].Value.ToString(), dataGridView1.CurrentRow.Cells[3].Value.ToString());
@@ -201,6 +205,7 @@ namespace PhoneBook
             info.Show();
         }
 
+        //Code For AboutUs Button
         private void BtnAboutUS_Click(object sender, EventArgs e)
         {
             AboutUs aboutUs = new AboutUs();
