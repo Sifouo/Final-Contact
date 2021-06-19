@@ -69,6 +69,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(122)))));
+            this.pictureBox1.Image = global::PhoneBook.Properties.Resources.Copy_of_no_pictures_sign_flyer_template___Made_with_PosterMyWall;
             this.pictureBox1.Location = new System.Drawing.Point(574, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(205, 241);

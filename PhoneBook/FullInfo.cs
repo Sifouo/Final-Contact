@@ -35,7 +35,7 @@ namespace PhoneBook
             }
             else
             {
-                pictureBox1.Image = Image.FromFile($"{Application.StartupPath}\\noCopy.jpg");
+                pictureBox1.Image = Properties.Resources.Copy_of_no_pictures_sign_flyer_template___Made_with_PosterMyWall;
             }
         }
 
